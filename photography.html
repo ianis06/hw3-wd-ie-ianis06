@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body class="photography-page">
+    <h1>Photography</h1>
+    <p>Photography is one of my passions, and I have a portfolio of photos that I have taken and edited on my Instagram page: @justcars.ar</p>
+    <div class="gallery">
+        <img src="p (1).jpg" alt="A photo of a BMW F33 430i convertible with a sunset in the backround." class="gallery-img" onclick="openModal(this)">
+        <img src="p (2).jpg" alt="A landscape version of the photo of a BMW F33 430i convertible with a sunset in the backround." class="gallery-img" onclick="openModal(this)">
+        <img src="p (3).jpg" alt="A photo of an Alfa Romeo Giulia, shot in Riva del Garda." class="gallery-img" onclick="openModal(this)">
+        <img src="p (4).jpg" alt="A photo of an Alfa Romeo Giulia." class="gallery-img" onclick="openModal(this)">
+        <img src="p (5).jpg" alt="Aan artistic photo of a Volkswagen Golf convertible." class="gallery-img" onclick="openModal(this)">
+        <img src="p (6).jpg" alt="A photo of a Volkswagen Golf convertible." class="gallery-img" onclick="openModal(this)">
+        <img src="p (7).jpg" alt="An artistic photo of a BMW E30 and a BMW E46 driving in a foggy forest." class="gallery-img" onclick="openModal(this)">
+        <img src="p (8).jpg" alt="An artistic photo of a BMW 3 series G20 with glowing headlights and a kitten." class="gallery-img" onclick="openModal(this)">
+        <img src="p (9).jpg" alt="An artistic photo of a Dodge Ram1500 lit up by the purple lights of a gas station." class="gallery-img" onclick="openModal(this)">
+
+    </div>
+
+    <div id="photoModal" class="modal" onclick="closeModal(event)">
+        <span class="close-modal" onclick="closeModal(event)">&times;</span>
+        <div class="modal-content">
+            <img class="modal-image" id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <footer class="page-nav">
+        <h2>Go back:</h2>
+        <p><a href="cv.html">Back to CV</a></p>
+    </footer>
+
+    <script>
+        function openModal(img) {
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = img.src;
+            modalImage.alt = img.alt;
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            const modal = document.getElementById('photoModal');
+            if (event.target === modal || event.target.classList.contains('close-modal')) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modal = document.getElementById('photoModal');
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>

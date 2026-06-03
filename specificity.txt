@@ -1,0 +1,12 @@
+Paragraph A: Inside "p" we set the font color of Paragraph A to gray, font size to 1rem, font to Georgia, serif, line height 1.4, and padding to 4px. This happens because it is a simple element selector.
+
+Paragraph B: Inside ".info" we set the font color of Paragraph B to steelblue, font size to 1.25rem, background-color to #e8f4fd, padding to 8px 14px, and font to Arial, sans-serif. These properties override the "p" selector because a class selector has higher specificity than an element selector.
+
+Paragraph C: Inside "#warning" we set the font color of Paragraph C to darkred, font size to 0.8rem, font style to italic, text-transform to uppercase, and font to 'Courier New', monospace. The ID selector is much stronger than both the "p" and ".info" selectors, so these styles take priority.
+
+Paragraph D: Inside "#warning.info" we set the font color of Paragraph D to darkorange, background-color to #fff7e0, and font size to 1.1rem. Even though this paragraph matches "p", ".info", and "#warning", the browser uses the darkorange color because the combined selector (#warning.info) has the highest specificity score.
+
+
+The CSS Properties Battle (Paragraph D)
+Color: The browser uses darkorange. This is because Paragraph D matches the #warning.info rule. This rule contains an ID and a class, making it more specific than the #warning rule (ID only) or the .info rule (class only).
+Font-Family: The browser uses 'Courier New', monospace. This is because the most specific rule (#warning.info) does not define a font-family. Therefore, the browser falls back to the next strongest rule that does define it, which is the ID selector #warning.

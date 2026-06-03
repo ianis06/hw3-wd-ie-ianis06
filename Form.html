@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact and project form</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body class="form-page">
+    <a class="skip-link" href="#form-heading">Skip to form</a>
+    <main id="main-content">
+        <header>
+            <h2>Contact and project request</h2>
+            <p>Use this accessible form to share your idea, request, or collaboration details.</p>
+        </header>
+
+        <section class="project-form-section" aria-labelledby="form-heading">
+            <div class="section-header">
+                <h2 id="form-heading">Send a message</h2>
+                <p id="form-description">Complete the fields below and submit your request.</p>
+            </div>
+            <form id="project-form" method="post" action="#" aria-describedby="form-description" novalidate>
+                <fieldset>
+                    <legend>Your details</legend>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-help name-error">
+                    <div id="name-help" class="field-help">Enter your full name.</div>
+                    <div id="name-error" class="error-message" aria-live="assertive"></div>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-help email-error">
+                    <div id="email-help" class="field-help">A valid email helps me respond quickly.</div>
+                    <div id="email-error" class="error-message" aria-live="assertive"></div>
+
+                    <label for="website">Website</label>
+                    <input type="url" id="website" name="website" placeholder="https://example.com" aria-describedby="website-help website-error">
+                    <div id="website-help" class="field-help">Optional: add a project link or portfolio page.</div>
+                    <div id="website-error" class="error-message" aria-live="assertive"></div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Message details</legend>
+                    <label for="msg">Message</label>
+                    <textarea id="msg" name="message" rows="5" required aria-required="true" aria-describedby="msg-help msg-error"></textarea>
+                    <div id="msg-help" class="field-help">Tell me briefly about your idea.</div>
+                    <div id="msg-error" class="error-message" aria-live="assertive"></div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>How did you hear about my website?</legend>
+                    <label for="hear-course">
+                        <input type="radio" id="hear-course" name="hear" value="friends" aria-describedby="hear-help">
+                        Friends
+                    </label>
+                    <label for="hear-search">
+                        <input type="radio" id="hear-search" name="hear" value="search" aria-describedby="hear-help">
+                        Search / web
+                    </label>
+                    <label for="hear-other">
+                        <input type="radio" id="hear-other" name="hear" value="other" aria-describedby="hear-help">
+                        Other
+                    </label>
+                    <div id="hear-help" class="field-help">Optional: how did you find this site?</div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences</legend>
+                    <label for="contact-method">Preferred contact method</label>
+                    <select id="contact-method" name="contact-method" aria-describedby="contact-method-help contact-method-error">
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                        <option value="chat">Chat</option>
+                    </select>
+                    <div id="contact-method-help" class="field-help">How should we contact you?</div>
+                    <div id="contact-method-error" class="error-message" aria-live="assertive"></div>
+
+                    <label class="checkbox-label" for="subscribe">
+                        <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                        Subscribe to updates
+                    </label>
+                </fieldset>
+
+                <button type="submit">Send message</button>
+            </form>
+            
+            <!-- Submission output: accessible table inserted here -->
+            <div id="submission-area" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer class="page-nav">
+        <h2><a href="index.html">Go back to home page</a></h2>
+    </footer>
+    <script src="form.js" defer></script>
+</body>
+</html>
